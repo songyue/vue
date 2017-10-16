@@ -71,7 +71,7 @@
           <div class="n-box2">
               <p class="c2 rel" v-bind:style="{height: button.height}">
                 {{section.description}}
-                  <span class="to-more" v-on:click="button_click" v-bind:class="{down: button.isDown}"> </span>
+                  <span class="to-more" v-on:click="btn_click" v-bind:class="{down: button.isDown}"> </span>
               </p>
           </div>
           <div class="n-box1">
@@ -157,15 +157,16 @@
       }
     },
     methods: {
-      button_click: function (event) {
-        console.log('adfads');
+      btn_click: function (event) {
+        // 原来前端这样给的代码，我也很无语
         // `this` 在方法里指当前 Vue 实例
+        var button = this.button;
         if(button.height == '0.66rem'){
           button.height = 'auto';
-          height.isDown = 'down';
+          button.isDown = 'down';
         }else{
           button.height = '0.66rem';
-          height.isDown = '';
+          button.isDown = '';
         }
       }
 
