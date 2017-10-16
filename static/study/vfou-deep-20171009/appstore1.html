@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!-- saved from url=(0018)http://m.vfou.com/ -->
+<html class="am-touch js cssanimations">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimal-ui">
+    <title>玩否</title>
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <link rel="icon" type="image/png" href="http://m.vfou.com/assets/i/favicon.png">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="http://m.vfou.com/assets/i/app-icon.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="VFOU">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <link rel="stylesheet" type="text/css" href="./css/amazeui.css">
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="./css/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/amazeui.min.js"></script>
+
+    <script src="./js/swiper-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        html,
+        body,
+        div {
+            text-align: center;
+        }
+        .am-modal-hd{font-size: 0;}
+        .am-dimmer-active {
+            overflow-y: hidden;
+        }
+        .swiper-pagination-bullet{background: #000;}
+        .swiper-pagination-bullet-active{background: #ff4844!important;}
+        .am-slider .swiper-pagination {
+            position: absolute!important;
+            left:auto!important;
+            bottom: 0.1rem!important;
+            width:100%!important;
+        }
+    </style>
+</head>
+
+<body >
+<script type="text/javascript">
+    document.body.onselectstart = document.body.oncontextmenu = function() {
+        return false;
+    }
+</script>
+<div class="appstore" style="position: relative;">
+    <div class="first">
+        <div class="firimg"><img src="./img/aa_03.png" alt=""></div>
+        <p>这里是任务助手</p>
+        <div class="zhushou">
+            <img src="./img/zhushou_03.png" alt="">
+        </div>
+    </div>
+    <a class="tostore down_url">前往APP Store下载</a>
+    <div class="second">
+        <div class="secimg"><img src="./img/bb_03.png" alt=""></div>
+        <p>这里是任务</p>
+    </div>
+    <div class="third">
+        <div class="thirimg"> <img src="./img/cc_03.png" alt=""></div>
+
+    </div>
+</div>
+<div class="am-modal am-modal-alert" tabindex="-1" id="my-alert">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">提示</div>
+        <div class="am-modal-bd">
+            请在IOS系列环境下打开！
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn">确定</span>
+        </div>
+    </div>
+</div>
+<div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
+    <div class="am-modal-dialog" style="background: transparent;width: 80%;">
+        <div class="am-modal-hd">
+            <!--<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>
+                &times;
+            </a>-->
+        </div>
+        <div class="am-modal-bd">
+            <!--Modal 内容。本 Modal 无法通过遮罩层关闭。-->
+
+            <div id="" style="width: 100%;position: relative;">
+                <img src="./img/dialog_show.png" style="width: 100%;height: auto;">
+                <div style="position: absolute;bottom: 10%;left: 0px;width: 100%;height: auto;text-align: center;">
+                    <img id="setting_btn" style="width: 80%;height: auto;" src="./img/btn_setting.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--IOS10设置引导-->
+<div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-2">
+    <div class="am-modal-dialog" style="background: transparent;width: 80%;min-height: 300px;">
+        <div class="am-modal-hd" style="padding-bottom:0px ;">
+            <!--<a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>
+                &times;
+            </a>-->
+            <div id="modal_toggle_2" style="background: transparent;">
+                <img style="width: 100%;" src="./img/close_title.png">
+            </div>
+        </div>
+        <div class="am-modal-bd">
+            <!--Modal 内容。本 Modal 无法通过遮罩层关闭。-->
+            <style type="text/css">
+                .am-slider-a1 {
+                    -webkit-box-shadow: none;
+                    box-shadow: none;
+                    display: block;
+                }
+
+                .swiper-container {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    border-radius: 6px;
+                }
+
+                .swiper-slide {
+                    text-align: center;
+                    font-size: 18px;
+                    background: transparent;
+                    /* Center slide text vertically */
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    -webkit-justify-content: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    -webkit-align-items: center;
+                    align-items: center;
+                }
+
+                .swiper-slide img {
+                    width: 100%;
+                    height: auto;
+                }
+            </style>
+
+            <div class="am-slider am-slider-a1 ">
+                <!-- Swiper -->
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./img/guide_1.png"></div>
+                        <div class="swiper-slide"><img src="./img/guide_2.png"></div>
+                        <div class="swiper-slide"><img src="./img/guide_3.png"></div>
+                        <div class="swiper-slide"><img src="./img/guide_4.png"></div>
+                        <div class="swiper-slide"><img src="./img/guide_5.png"></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .all-bg-tx{position:fixed;top:0;left:0;z-index:10000;display:none;width:100%;height:100%;background:rgba(0,0,0,.3);}
+.alert-arrow{position:absolute;z-index:10002;}
+#alert-arrow1{top:0;right:8px;width:36px;height:55px;}
+#alert-arrow1 img{width:100%;height:100%;}
+#alert-arrow2{top:102px;right:150px;width:54px;height:36px;}
+#alert-arrow2 img{width:100%;height:100%;}
+#alert-arrow3{top:216px;right:186px;width:8px;height:36px;}
+#alert-arrow3 img{width:100%;height:100%;}
+.alert-con{position:absolute;z-index:10002;-webkit-border-radius:4px;border-radius:4px;background:#f3f3f3;}
+#alert-con1{top:54px;right:0;width:250px;height:56px;}
+#alert-con2{top:138px;right:0;width:280px;height:80px;}
+#alert-con3{top:252px;right:0;width:280px;height:56px;}
+.alert-con-ball{position:absolute;z-index:10003;width:28px;height:28px;-webkit-border-radius:18px;border-radius:18px;background:#2eb6f4;color:#fff;text-align:center;font-size:22px;line-height:28px;}
+#alert-con-ball1{top:14px;left:12px;}
+#alert-con-ball2{top:26px;left:12px;}
+#alert-con-ball3{top:14px;left:12px;}
+.alert-con-text{position:absolute;z-index:10003;color:#464646;font-size:14px;}
+#alert-con-text1{top:0;left:46px;height:56px;line-height:56px;}
+#alert-con-text2{top:0;left:52px;height:80px;line-height:80px;}
+#alert-con-text3{top:0;left:52px;height:56px;line-height:56px;}
+.alert-con-icon{position:absolute;z-index:10003;}
+#alert-con-icon1{top:12px;right:16px;width:32px;height:32px;}
+#alert-con-icon1 img{width:100%;height:100%;}
+#alert-con-icon2{top:12px;right:40px;width:50px;height:50px;}
+#alert-con-icon2 img{width:100%;height:100%;}
+</style>
+<div class="all-bg-tx" id="all-bg-tx">
+    <div class="alert-wrap">
+        <img width="100%" height="auto" src="./img/down_weixin.png">
+    </div>
+</div>
+
+<!-- Initialize Swiper -->
+<script type="text/javascript">
+    if((navigator.userAgent.match(/(iPhone|iPod|ios|iPad)/i))) {
+
+    }else{
+        $("#part2").hide();
+    }
+
+    function is_weixin() {
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i) == "micromessenger") {
+            return true;
+        }
+        else if(ua.match(/QQ/i) == "qq")
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+
+    }
+    var isWeixin = is_weixin();
+    $('.down_url').on('click', function(e) {
+        if(isWeixin) {
+            var $modal = $('.all-bg-tx');
+            $modal.modal('open');
+        }
+//                else {
+//                    window.open("http://h5.vfou.com");
+////                    window.open("https://itunes.apple.com/us/app/新游记/id1249266338?l=zh&ls=1&mt=8"); //                    return false;
+//                }
+
+
+        var urlhash = window.location.hash;
+        if(!urlhash.match("fromapp")) {
+            //判断状态按钮属性
+            if(isWeixin) {
+                var $modal = $('.all-bg-tx');
+                $modal.modal('open');
+            } else {
+                if((navigator.userAgent.match(/(iPhone|iPod|ios|iPad)/i))) {
+
+                    var ver = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+                    ver = parseInt(ver[1], 10);
+                    window.location.href = "itms-services://?action=download-manifest&url=https%3A%2F%2Fssl.vfou.com%2Fapp%2Fsmzs%2Fsmzs.plist";
+//							window.location.href = "//";
+                    var $modal = $('#doc-modal-1');
+                    setTimeout(function(){
+                        if(ver>=10){
+                            var $modal2 = $('#doc-modal-2');
+                            $modal2.modal('open');
+                            var swiper = new Swiper('.swiper-container', {
+                                pagination: '.swiper-pagination',
+                                paginationClickable: true,
+                                loop : true,
+                                autoplay : 2000
+                            });
+                        } else{
+                            $modal.modal('open');
+                            $("#setting_btn").click(function(){
+                                window.location.href="prefs:root=General&path=ManagedConfigurationList";
+                            });
+                        }
+                    },2000);
+                } else {
+//							    var $modal = $('#my-alert');
+//									$modal.modal('open');
+                    window.location.href = "http://download.vfou.com/vfou_1.2.3.apk";
+                }
+
+            }
+
+        }
+    });
+    $('#modal_toggle_2').on('click',function(){
+        var $modal2 = $('#doc-modal-2');
+        $modal2.modal('close');
+    });
+</script>
+
+
+
+</body>
+</html>

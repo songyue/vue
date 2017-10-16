@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>Title</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body style="background: #eee;">
+<div  id="app">
+  <header>
+      <h5><span class="back"></span><span class="txdetail">{{header.title}}</span></h5>
+  </header>
+  <div class="section">
+          <div class="n-down padding-bottom0 ">
+              <div class="n-down1 task_info">
+
+                  <div class="app-img">
+                      <img :src="section.task_info.app_img" alt="">
+                  </div>
+                  <div class="app-infor">
+                      <h5>{{section.task_info.app_infor}}</h5>
+                      <p>下载完成后到本页领取任务</p>
+                  </div>
+
+                  <div class="appdown">
+                    <a :href=section.task_info.appdown target="_blank"><img src="img/down.png" alt=""></a>
+                  </div>
+
+              </div>
+              <div class="flex2 bor5 user_info" >
+                  <div class="app-d1">
+                     <h5>{{section.user_info.id}}</h5>
+                      <p>ID</p>
+                  </div>
+                  <div class="app-d1 bor6">
+                      <h5>{{section.user_info.nickname}}</h5>
+                      <p>昵称</p>
+                  </div>
+                  <div class="app-d1">
+                      <h5>{{section.user_info.income}}</h5>
+                      <p>已获得</p>
+                  </div>
+
+              </div>
+              <div class="wei">
+                  未完成以上所有步骤前请勿卸载应用
+              </div>
+          </div>
+          <div class="n-box">
+              <ul class="n-b">
+                  <li v-for="step in section.task_step">
+                      <div class="infor1">
+                          <p class="d-s">{{step.desc}}</p>
+                          <p class="d-z">{{step.desc2}}</p>
+                      </div>
+
+                    <div class="l-btn l-btn2" v-if="step.status === 0">领取</div>
+                    <div class="l-btn l-btn1" v-else-if="step.status === 1">领取</div>
+                    <div class="l-btn l-btn3" v-else>已领取</div>
+                  </li>
+
+              </ul>
+          </div>
+          <div class="n-box1">
+              <p class="c2">简介:</p>
+          </div>
+          <div class="n-box2">
+              <p class="c2 rel" v-bind:style="{height: button.height}">
+                {{section.description}}
+                  <span class="to-more" v-on:click="button_click" v-bind:class="{down: button.isDown}"> </span>
+              </p>
+          </div>
+          <div class="n-box1">
+              <p class="c2">图片预览:</p>
+          </div>
+          <div class="n-box2">
+             <div class="flex2">
+                  <div class="tu1">
+                      <img src="img/tu11.png" alt="">
+                  </div>
+                 <div class="tu1">
+                     <img src="img/tu22.png" alt="">
+                 </div>
+                 <div class="tu1">
+                     <img src="img/tu33.png" alt="">
+                 </div>
+             </div>
+          </div>
+          <div class="n-box1">
+              <p class="c2">任务攻略:</p>
+          </div>
+          <div class="n-box2">
+              <ul class="n-b">
+                  <li>
+                      <div class="infor2">
+                          <p class="d-s">1.手机号注册登录游戏奖励0.4元注册登</p>
+                          <p class="d-z">(只有绑定新手机号才可以获得)</p>
+                      </div>
+
+                  </li>
+                  <li>
+                      <div class="infor2">
+                          <p class="d-s">1.手机号注册登录游戏奖励0.4元注册登</p>
+                          <p class="d-z">(只有绑定新手机号才可以获得)</p>
+                      </div>
+
+                  </li>
+                  <li>
+                      <div class="infor2">
+                          <p class="d-s">1.手机号注册登录游戏奖励0.4元注册登</p>
+                          <p class="d-z">(只有绑定新手机号才可以获得)</p>
+                      </div>
+
+                  </li>
+
+              </ul>
+          </div>
+  </div>
+
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      header: {
+        title: '一起牛'
+      },
+      section: {
+        task_info: {
+          app_img: 'img/appimg.png',
+          app_infor: '闪银--3分钟就有钱',
+          appdown: 'http://baidu.com'
+        },
+        user_info: {
+          id:1204850,
+          nickname : 'vivox8',
+          income: '1367'
+        },
+        task_step: [
+          {desc:'1.手机号注册登录游戏奖励0.4元注册登', desc2:'(只有绑定新手机号才可以获得)', status: 2},
+          {desc:'2.手机号注册登录游戏奖励0.4元注册登', desc2:'(只有绑定新手机号才可以获得)', status: 2},
+          {desc:'3.手机号注册登录游戏奖励0.4元注册登', desc2:'(只有绑定新手机号才可以获得)', status: 1},
+          {desc:'4.手机号注册登录游戏奖励0.4元注册登', desc2:'(只有绑定新手机号才可以获得)', status: 0},
+          {desc:'5.手机号注册登录游戏奖励0.4元注册登', desc2:'(只有绑定新手机号才可以获得)', status: 0}
+          ],
+        description: '后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，'
+      },
+      button:{
+        height: '0.66rem',
+        isDown : ''
+      }
+    },
+    methods: {
+      button_click: function (event) {
+        console.log('adfads');
+        // `this` 在方法里指当前 Vue 实例
+        if(button.height == '0.66rem'){
+          button.height = 'auto';
+          height.isDown = 'down';
+        }else{
+          button.height = '0.66rem';
+          height.isDown = '';
+        }
+      }
+
+    }
+  })
+</script>
+</html>

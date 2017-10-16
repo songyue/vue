@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/common.css">
+
+</head>
+<body>
+ <div class="header">
+   <div class="myimg">
+       <img src="./img/my_03.png" alt="">
+   </div>
+     <div class="myinfo">
+         <p><span class="pull-left">点击绑定微信</span> <span class="pull-right">200</span></p>
+         <p><span class="pull-left">ID 1237246</span> <span class="pull-right">账户总额（元）</span></p>
+     </div>
+ </div>
+<section>
+    <div class="box">
+        <a href="income.html" class="flex1">
+            <div><span class="shouru"></span><span class="c2">收入详情</span></div>
+            <div><span class="aaa">今日3.00</span> <span class="go"></span></div>
+        </a>
+        <a href="tixian.html" class="flex1">
+            <div><span class="weixin"></span><span class="c2">微信提现</span></div>
+            <div><span class="aaa">可提30.00</span> <span class="go"></span></div>
+        </a>
+    </div>
+    <div class="box">
+        <a class="flex1 buser">
+            <div><span class="username"></span><span class="c2">用户姓名</span></div>
+            <div><span class="aaa">未绑定</span> <span class="go"></span></div>
+        </a>
+        <a class="flex1 bphone">
+            <div><span class="phone"></span><span class="c2">手机账号</span></div>
+            <div><span class="aaa">未绑定</span> <span class="go"></span></div>
+        </a>
+        <a class="flex1 bid">
+            <div><span class="teacherid"></span><span class="c2">师傅ID</span></div>
+            <div><span class="aaa">未绑定</span> <span class="go"></span></div>
+        </a>
+    </div>
+    <div class="box">
+        <a class="flex1">
+            <div class="c2">通知服务</div>
+            <div class="on"> </div>
+        </a>
+
+    </div>
+    <div class="box">
+        <a class="flex1">
+            <div><span class="question"></span><span class="c2">常见问题</span></div>
+            <div><span class="aaa">今日3.00</span> <span class="go"></span></div>
+        </a>
+        <a class="flex1">
+            <div><span class="check"></span><span class="c2">检查更新</span></div>
+            <div><span class="aaa">V1.5</span> <span class="go"></span></div>
+        </a>
+    </div>
+
+</section>
+ <footer >
+     <div class="flex">
+         <a href="index.html" class="tubiao">
+             <div class="renwu"></div>
+             <div>任务</div>
+         </a>
+         <a href="yaoqing.html" class="tubiao">
+             <div class="yaoqing"></div>
+             <div>邀请</div>
+         </a>
+         <a href="information.html" class="tubiao ">
+             <div class="message"></div>
+             <div>消息</div>
+         </a>
+         <a href="mine.html" class="tubiao cur">
+             <div class="mine"></div>
+             <div>我的</div>
+         </a>
+     </div>
+
+ </footer>
+
+
+ <!--绑定姓名的弹窗-->
+ <div class="alert hidden">
+     <div class="alertbox">
+         <h4 class="alerth"><span class="off1"></span></h4>
+         <div class="contentno">
+             <div class="contbt">为了您顺利提现，请绑定姓名</div>
+             <div class="inputbox">
+                 <div class="xingming"><span class="bank"></span><input class="number" placeholder="请绑定和微信银行卡一致的姓名" type="text" ></div>
+
+             </div>
+         </div>
+         <div class="alertbtn">确定</div>
+
+
+     </div>
+ </div>
+
+ <!--绑定手机号码的弹窗-->
+ <div class="alert hidden">
+     <div class="alertbox">
+         <h4 class="alerth"><span class="off1"></span></h4>
+         <div class="contentno">
+             <div class="contbt">为了您的账号安全，请绑定</div>
+             <div class="inputbox">
+                 <div class="shouji"><span class="user"></span><input class="number" placeholder="请输入手机号码" type="text" ></div>
+                 <div class="shouji"><span class="pass"></span><input placeholder="请输入验证码" class="yan" type="text">
+                     <span class="yanzheng">获取验证码</span>
+                 </div>
+             </div>
+         </div>
+         <div class="alertbtn">确定</div>
+
+
+     </div>
+ </div>
+ <!--输入邀请码的弹窗-->
+ <div class="alert hidden">
+     <div class="alertbox">
+         <h4 class="alerth"><span class="off1"></span></h4>
+         <div class="contentno">
+             <div class="contbt">输入邀请ID</div>
+             <div class="inputbox">
+                 <div class="xingming"><span class="id">ID</span><input class="number" placeholder="请输入邀请ID" type="text" ></div>
+
+             </div>
+         </div>
+         <div class="alertbtn">确定</div>
+         <div class="download">只有一次输入机会，输入后不可修改</div>
+
+     </div>
+ </div>
+</body>
+<script src="./js/jquery-1.8.3.min.js"></script>
+<script src="./js/common.js"></script>
+<script>
+    $(function () {
+//        关闭按钮
+        var z=1;
+          $(".on").click(function () {
+              if (z==1){
+                  $(this).addClass("off");
+                  z=0;
+              }else {
+                  $(this).removeClass("off");
+                  z=1;
+              }
+
+          });
+//        绑定姓名弹窗
+        $(".buser").click(function () {
+               $(".alert").eq(0).show();
+        }) ;
+//        绑定手机账号弹窗
+        $(".bphone").click(function () {
+            $(".alert").eq(1).show();
+        });
+//        绑定师傅id弹窗
+        $(".bid").click(function () {
+            $(".alert").eq(2).show();
+        });
+    })
+</script>
+</html>

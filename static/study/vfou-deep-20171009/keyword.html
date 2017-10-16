@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/common.css">
+
+</head>
+<body>
+<header>
+    <h5>试玩奖励1.5元<span class="back"></span></h5>
+</header>
+<div class="section padding">
+    <div class="box tips">
+      <div class="prompt">
+          <div class="proleft">
+              <div class="red pull-left"></div>
+              <div class="pull-left tishi">温馨提示</div>
+          </div>
+
+          <div class="proright"></div>
+
+      </div>
+        <p>提供截图需和任务所需截图一致</p>
+        <p>截图中的任务信息需要和任务所需信息吻合</p>
+        <p> 您所提交的信息，绝对安全，玩否官方保密</p>
+        <p>审核时间为2个工作日</p>
+    </div>
+    <div class="jiangli">
+        <span class="colorred">首次</span><span>下载</span><span class="colorred">注册</span><span>并试玩</span><span class="colorred">5分钟</span><span>获奖励+1.5</span>
+    </div>
+    <div class="box detail">
+        <div class="paiming">
+            在第<span class="colorred">60</span>位左右
+        </div>
+        <div class="zhushou margin0">
+            <img src="./img/icon2_03.jpg" alt="">
+        </div>
+        <div class="fuzhi">
+            请在<span class="colorred">120秒内</span>复制关键词
+        </div>
+        <a class="step stepa"><p>复制“ <span id="bar">关键词</span> ”</p><span class="step1">第一步</span></a>
+        <a class="step stepb"><p>打开应用 </p><span class="step1">第二步</span></a>
+    </div>
+    <div class="jiangli">
+        <span>任务完成后，勿删除</span><span class="colorred">次日</span><span>打开可获得奖励</span><span class="colorred">0.1</span><span>元</span>
+    </div>
+</div>
+<p class="vfouurl">请记住玩否永久网址：h5.vfou.com</p>
+<!--弹窗-->
+<div class="alert hidden">
+    <div class="alertbox">
+        <h4 class="alerth"><span class="off1"></span></h4>
+        <div class="content11">
+            <div class="conth">
+                复制成功
+            </div>
+        </div>
+        <div class="alertbtn">知道了</div>
+
+
+    </div>
+</div>
+</body>
+<script src="./js/jquery-1.8.3.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/clipboard.min.js"></script>
+<script>
+    //提示信息
+    $(function () {
+
+        //判断ios的版本号start
+
+        var ver = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+        ver = parseInt(ver[1], 10);
+
+        if(ver<10)
+        {
+            $(".stepa").addClass("stepaa").click(function () {
+                return;
+            })
+            $(".stepa").after("<div class='putdown'>请您长按关键字进行复制</div>") ;
+
+        } else {
+
+            $(".stepa").click(function () {
+
+                var clipboard = new Clipboard('.stepa', {
+                    text: function() {
+                        return $("#bar").text();
+                    }
+                });
+                clipboard.on('success', function(e) {
+                    $(".alert").eq(0).show();
+                    e.clearSelection();
+
+                        $(".stepa").children("p").text("已复制“关键词”") ;   //f复制关键词
+
+                        $(".fuzhi").eq(0).empty().append("<span>请在</span><span class='colorred'>10分钟</span><span>内完成下载</span>") ;
+
+                });
+
+                clipboard.on('error', function(e) {
+
+//                alert('请选择“拷贝”进行复制!')
+                });
+            })
+        }
+        //判断ios的版本号end
+
+        var f=1;
+        $(".prompt").eq(0).click(function () {
+            $(this).siblings().toggle();
+            if (f==1){
+                $(".proright").eq(0).addClass("down");
+                $(".tishi").eq(0).empty().append("<span>玩否官方提示:</span><span class='colorqian'>iOS10用户必须允许使用网络</span>");
+                f=0;
+            }else {
+                $(".proright").eq(0).removeClass("down")
+                f=1;
+                $(".tishi").eq(0).text("温馨提示");
+            }
+
+        }) ;
+        
+
+        $(".stepb").eq(0).click(function () {
+            $(".fuzhi").eq(0).empty().append("<span>请在</span><span class='colorred'>10分钟</span><span>内打开应用</span>");
+        })
+    })
+
+</script>
+</html>

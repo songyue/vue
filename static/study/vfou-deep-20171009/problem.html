@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/common.css">
+
+
+</head>
+<body>
+<header >
+    <h5 style="background:#333;">常见问题<span class="back"></span></h5>
+</header>
+<div class="section padding">
+    <ul class="pro">
+        <li>
+            <div class="slid">账户相关 <span class="turnup"></span></div>
+            <div class="slide">
+                <p>1.手机验证码问题：</p>
+                <span>请先确定电话号码是否填写正确，其次保证手机畅通，最后检查电话是否被拦截。如未发现上述问题，可点击“重新收取验证码”，
+                    玩否会重新给您发送语音验证码。接收语音验证码完全免费</span>
+
+                <p> 2.手机号码绑定：</p>
+                <span> 玩否支持一个手机绑定一个设备</span>
+                <p>3.邀请码：</p>
+                <span>可以不填写邀请码，填写后您和好友都能获得更多的奖励</span>
+                <p>4.账户找回：</p>
+                <span> 玩否一个账号绑定一个设备，切勿随意更改或者还原广告标示，因此而改变的 账户信息无法找回</span>
+
+            </div>
+        </li>
+        <li>
+
+            <div class="slid">邀请相关 <span class="turnup"></span></div>
+            <div class="slide">
+                <p> 1.什么是邀请码：</p>
+                <span>邀请码就是你的玩否ID</span>
+                <p> 2.怎么邀请好友：</p>
+                <span>玩否首页“邀请好友”，点击“立即分享”，可分享给微信好友和微信朋友圈</span>
+                <p>3.邀请奖励怎么获得：</p>
+                <span> 邀请好友绑定微信后，做的前10个任务您都可以换获得奖励</span>
+
+
+
+            </div>
+        </li>
+        <li>
+
+            <div class="slid">任务相关 <span class="turnup"></span></div>
+            <div class="slide">
+                <p> 1.快速任务相关：</p>
+                <span>快速任务无论付费还是免费，按要求完成任务提交后即可获得奖励；建议完成的任务不要立即删除，否则会影响有后续任务的奖励</span>
+                <p>2.高额任务相关：</p>
+                <span> 高额任务专区的任务必须提供和任务要求相符合的截图，才能通过审核，审核时间每个任务都不同，提交截图后不能修改，所以大家一定要仔细看要求哦</span>
+                <p>3.游戏任务相关：</p>
+                <span> 要求和高额任务一样哦，截图的正确性很重要哦</span>
+                <p>4.第三方任务相关：</p>
+                <span> 第三方都需要等第三方回调，并不能保证100%获得奖励</span>
+
+
+
+            </div>
+        </li>
+        <li>
+
+            <div class="slid">提现相关 <span class="turnup"></span></div>
+            <div class="slide">
+                <p>1.玩否的提现方式：</p>
+                <span>目前玩否只支持微信提现，直接到微信钱包，提现即时到帐</span>
+                <p>2.微信账号绑定：</p>
+                <span>微信账号一经绑定无法修改，建议绑定经常使用的微信</span>
+                <p> 3.微信提现的条件：</p>
+                <span> 第一微信绑定银行卡，第二提现姓名和微信绑定银行卡一致，第三为了账户安全绑定手机号码</span>
+                <p>4.微信提现失败：</p>
+                <span>微信提现失败后退回，是由于没有实名或者实名不一致，可以在“个人中心”中修改提现人姓名</span>
+
+            </div>
+        </li>
+        <li>
+            <div class="slid ">关于玩否 <span class="turnup"></span></div>
+            <div class="slide">
+                <span>玩否是一款手机兼职的应用，了解更多请关注官方微信号：VFOU888</span>
+            </div>
+        </li>
+    </ul>
+    <div class="code">
+        <img src="./img/code.jpg" alt="">
+    </div>
+    <div class="text-center"> 更多问题反馈商务合作请扫码关注玩否公众账号</div>
+
+</div>
+
+
+
+
+<footer >
+    <div class="flex">
+        <a href="index.html" class="tubiao cur">
+            <div class="renwu"></div>
+            <div>任务</div>
+        </a>
+        <a href="yaoqing.html" class="tubiao">
+            <div class="yaoqing"></div>
+            <div>邀请</div>
+        </a>
+        <a href="information.html" class="tubiao ">
+            <div class="message"></div>
+            <div>消息</div>
+        </a>
+        <a href="mine.html" class="tubiao">
+            <div class="mine"></div>
+            <div>我的</div>
+        </a>
+    </div>
+    
+
+</footer>
+
+
+
+
+
+
+
+</body>
+<script src="./js/jquery-1.8.3.min.js"></script>
+<script src="./js/common.js"></script>
+
+<script>
+
+
+    $(function () {
+      $(".slid").click(function () {
+            if($(this).hasClass("turndown")){
+                $(this).removeClass("turndown")
+
+            }else{
+                $(this).addClass("turndown");
+            }
+          $(this).siblings("div").slideToggle(200);
+          $(this).parent().siblings("li").children(".slide").slideUp(200).siblings(".slid").removeClass("turndown");
+      })
+
+
+    })
+
+
+
+</script>
+</html>

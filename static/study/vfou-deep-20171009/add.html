@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+<body>
+<header>
+    <h5>添加永久入口<span class="back"></span></h5>
+</header>
+    <div class="section">
+        <div class="add">
+            <div class="addbox">
+                <h3>添加玩否到桌面</h3>
+                <p>添加后可以随时在桌面的快捷方式打开玩否</p>
+                <p>再也不会错过任务啦</p>
+                <a href="javascript:;" class="tianjia">立即添加</a>
+            </div>
+        </div>
+    </div>
+<div class="alert hidden">
+    <div class="alertbox alertbox1">
+       <div class="backg">
+
+           <div class="flex" >
+               <a class="tubiao1 ">
+                   <div class="ct">
+                       <div class="copy"></div>
+                   </div>
+
+                   <div>复制</div>
+               </a>
+               <a  class="tubiao1">
+                   <div class="ct">
+                       <div class="shoucang"></div>
+                   </div>
+
+                   <div>添加到个人收藏</div>
+               </a>
+               <a  class="tubiao1 bor">
+                   <div class="ct">
+                       <div class="addzhu"></div>
+                   </div>
+
+                   <div >添加到主屏幕</div>
+               </a>
+               <a  class="tubiao1">
+                   <div class="ct">
+                       <div class="liebiao"></div>
+                   </div>
+
+                   <div>接入阅读列表</div>
+               </a>
+           </div>
+       </div>
+        <div class="xia"></div>
+
+    </div>
+</div>
+</body>
+<script>
+    $(".tianjia").on("click",function () {
+        $(".alert").show();
+    })
+</script>
+</html>

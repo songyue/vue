@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <style>
+        footer{height: 2.5rem;z-index: 9999}
+        .tubiao{width:1.5rem;}
+        .renwu,.yaoqing,.message,.mine{width: 0.8rem; ;height:1.2rem;margin-left:0.2rem;margin-bottom: 0.1rem;}
+        .tubiao div{font-size: 0.6rem;line-height: 0.7rem;}
+
+        .tubiao {width:1.9rem;padding: 0.2rem;}
+        .tubiao div{color: #7a7a7a;
+            font-size: 0.6em;
+            line-height: 1rem;
+            text-align: center;}
+        .list-block{margin: 0!important;}
+        section{ padding: 0 0.8rem;background: #f3f8fb;padding-top: 0.5rem;}
+        .content{font-size: 0.16rem!important;color:#333}
+        .myid{height:1rem;}
+        .myid span{line-height: 1rem;}
+        .infor1{color:#333;font-size: 0.75rem;line-height: 1.2rem;}
+        .item-content  .box{padding: 0.35rem 0.75rem 0.35rem  0;background: #fff;border-radius:0;width: 100%;min-height: 2rem;}
+        .dotred{width: 0.2rem;
+            height: 0.2rem;
+            background: #aaa;
+            margin-top: 0.3rem;margin-right: 0.3rem!important;}
+        .al{padding: 0.3rem;;}
+        .albox{background: #fff;border-radius: 0.3rem;padding: 0.3rem;display: block;}
+
+    </style>
+</head>
+
+<body>
+<div class="al">
+    <a class="albox">
+        <div class="infor1"> 这里是一条置顶的系统公告，</div>
+    </a>
+</div>
+<div class="page-group">
+    <div class="page page-current">
+
+        <!-- 你的html代码 -->
+
+        <!-- 添加 class infinite-scroll 和 data-distance  向下无限滚动可不加infinite-scroll-bottom类，这里加上是为了和下面的向上无限滚动区分-->
+        <div class="content infinite-scroll infinite-scroll-bottom nodata" data-distance="10" data-ptr-distance="55">
+            <div class="list-block ">
+
+            </div>
+            <!-- 加载提示符 -->
+
+        </div>
+    </div>
+</div>
+<footer >
+    <div class="flex">
+        <a href="index.html" class="tubiao">
+            <div class="renwu"></div>
+            <div>任务</div>
+        </a>
+        <a href="yaoqing.html" class="tubiao">
+            <div class="yaoqing"></div>
+            <div>邀请</div>
+        </a>
+        <a href="information.html" class="tubiao cur">
+            <div class="message"></div>
+            <div>消息</div>
+        </a>
+        <a href="mine.html" class="tubiao">
+            <div class="mine"></div>
+            <div>我的</div>
+        </a>
+    </div>
+
+</footer>
+</body>
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script>
+    $(function(){
+        infor();//确定置顶信息的高度
+
+        function infor() {
+            var heial=$(".al").height();
+            $(".page-group ").css("margin-top",heial+"px")
+            var heizong=$(window).height();
+            var heicontent=heizong-$(".al").height()-$("footer").height();
+            $(".page-group").height(heicontent);//中间容器的高度
+        }
+
+
+        $.init();
+
+        // 加载flag
+        var loading = false;
+        // 最多可加载的条目
+        var maxItems = 1000;
+
+        // 每次加载添加多少条目
+        var itemsPerLoad = 20;
+
+        //预先加载20条
+        addItems(itemsPerLoad, 0);
+
+        // 上次加载的序号
+        var lastIndex = 20;
+
+        // 注册'infinite'事件处理函数
+        $(document).on('infinite', '.infinite-scroll-bottom',function() {
+            // 如果正在加载，则退出
+            if (loading) return;
+
+            // 设置flag
+            loading = true;
+
+            // 模拟1s的加载过程
+            setTimeout(function() {
+                // 重置加载flag
+                loading = false;
+
+                if (lastIndex >= maxItems) {
+                    alert(23);
+                    // 加载完毕，则注销无限加载事件，以防不必要的加载
+                    $.detachInfiniteScroll($('.infinite-scroll'));
+                    // 删除加载提示符
+                    $('.infinite-scroll-preloader').remove();
+                    return;
+                }
+
+                // 添加新条目
+                addItems(itemsPerLoad, lastIndex);
+                // 更新最后加载的序号
+                lastIndex = $('.list-container li').length;
+                //容器发生改变,如果是js滚动，需要刷新滚动
+                $.refreshScroller();
+            }, 1000);
+        });
+    });
+
+    function addItems(number, lastIndex) {
+        // 生成新条目的HTML
+        var html = '';
+        for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
+            html += '<li class="item-content"><div class="item-inner"><div class="item-title">Item ' + i + '</div></div></li>';
+        }
+        // 添加新条目
+        $('.infinite-scroll-bottom .list-container').append(html);
+    }
+</script>
+</html>

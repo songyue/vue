@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/common.css">
+
+</head>
+<body>
+<header>
+    <h5>试玩奖励1.5元<span class="back"></span></h5>
+</header>
+<div class="section padding padding-bottom0">
+    <div class="box tips">
+        <div class="prompt">
+            <div class="proleft">
+                <div class="hidden">
+                    <div class="red pull-left"></div>
+                    <div class="pull-left tishi"><span>玩否官方提示:</span><span class='colorqian'>iOS10用户必须允许使用网络</span></div>
+                </div>
+                 <div class="show">
+                     <div class="text-center">带有签到任务字样的任务，完成后不要删除，</div>
+                     <div class="text-center">按照要求连续几日打开都可在此获得奖励。</div>
+                 </div>
+
+            </div>
+
+            <div class="proright"></div>
+
+        </div>
+
+
+    </div>
+    <div class="jiangli">
+        <span>打开应用</span><span class="colorred">试玩3分钟</span><span>，即可获奖励</span>
+    </div>
+    <div class="box detail">
+        <div class="paiming">
+            奖励<span class="colorred">0.5</span>元
+        </div>
+        <div class="zhushou margin0">
+            <img src="./img/icon2_03.jpg" alt="">
+        </div>
+
+        <a class="stepone stepa"><p>已开始任务</p></a>
+
+    </div>
+    <div class="jiangli">
+        <span>任务完成后，勿删除</span><span class="colorred">次日</span><span>打开可获得奖励</span><span class="colorred">0.1</span><span>元</span>
+    </div>
+</div>
+<p class="vfouurl">请记住玩否永久网址：m.vfou.com</p>
+</body>
+<script src="./js/jquery-1.8.3.min.js"></script>
+<script src="./js/common.js"></script>
+<script>
+    $(function () {
+        var f=1;
+        $(".prompt").eq(0).click(function () {
+            $(this).siblings().toggle();
+            $(".hidden").toggle();
+            $(".show").toggle();
+            if (f==1){
+                $(".proright").eq(0).addClass("down");
+
+                f=0;
+            }else {
+                $(".proright").eq(0).removeClass("down")
+                f=1;
+
+            }
+
+        }) ;
+
+        $(".stepa").eq(0).click(function () {
+            $(this).children("p").text("已开始任务") ;   //f复制关键词
+            $(".fuzhi").eq(0).empty().append("<span>请在</span><span class='colorred'>10分钟</span><span>内完成下载</span>") ;
+        }) ;
+        $(".stepb").eq(0).click(function () {
+            $(".fuzhi").eq(0).empty().append("<span>请在</span><span class='colorred'>10分钟</span><span>内打开应用</span>");
+        })
+    })
+
+</script>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>Title</title>
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body style="background: #eee;">
+<div  id="app">
+  <header>
+      <h5><span class="back"></span><span class="txdetail">{{title}}</span></h5>
+  </header>
+  <div class="section">
+          <div class="n-down padding-bottom0">
+              <div class="n-down1">
+
+                  <div class="app-img">
+                      <img :src="app_img" alt="">
+                  </div>
+                  <div class="app-infor">
+                      <h5>{{app_infor}}</h5>
+                      <p>下载完成后到本页领取任务</p>
+                  </div>
+
+                  <div class="appdown">
+                    <a :href=appdown target="_blank"><img src="img/down.png" data-url="{{appdown}}" alt=""></a>
+                      <!-- <img src="img/down.png" data-url="{{appdown}}" alt=""> -->
+                  </div>
+
+              </div>
+              <div class="flex2 bor5">
+                  <div class="app-d1">
+                     <h5>1204853</h5>
+                      <p>ID</p>
+                  </div>
+                  <div class="app-d1 bor6">
+                      <h5>vivox9</h5>
+                      <p>昵称</p>
+                  </div>
+                  <div class="app-d1">
+                      <h5>1366</h5>
+                      <p>已获得</p>
+                  </div>
+
+              </div>
+              <div class="wei">
+                  未完成以上所有步骤前请勿卸载应用
+              </div>
+          </div>
+          <div class="n-box">
+              <ul class="n-b">
+                  <li>
+                      <div class="infor1">
+                          <p class="d-s">1.手机号注册登录游戏奖励0.4元注册登</p>
+                          <p class="d-z">(只有绑定新手机号才可以获得)</p>
+                      </div>
+                      <div class="l-btn l-btn1">领取</div>
+                  </li>
+                  <li>
+                      <div class="infor1">
+                          <p class="d-s">1.手机号注册登录游戏奖励0.4元注册登</p>
+                          <p class="d-z">(只有绑定新手机号才可以获得)</p>
+                      </div>
+                      <div class="l-btn l-btn2">领取</div>
+                  </li>
+                  <li>
+                      <div class="infor1">
+                          <p class="d-s">1.手机号注册登录游戏奖励0.4元注册登</p>
+                          <p class="d-z">(只有绑定新手机号才可以获得)</p>
+                      </div>
+                      <div class="l-btn l-btn3">已领取</div>
+                  </li>
+
+              </ul>
+          </div>
+          <div class="n-box1">
+              <p class="c2">简介:</p>
+          </div>
+          <div class="n-box2">
+              <p class="c2 rel">
+                  这里是后台设置的简介
+                  这里是后台设置的简介
+                  这里是后台设置的简介
+                  这里是后台设置的简介
+                  这里是后台设置的简介
+                  这里是后台设置的简介
+                  这里是后台设置的简介
+                  这里是后台设置的简介
+                  这里是后台设置的简介
+                  <span class="to-more"> </span>
+              </p>
+          </div>
+          <div class="n-box1">
+              <p class="c2">图片预览:</p>
+          </div>
+          <div class="n-box2">
+             <div class="flex2">
+                  <div class="tu1">
+                      <img src="img/tu11.png" alt="">
+                  </div>
+                 <div class="tu1">
+                     <img src="img/tu22.png" alt="">
+                 </div>
+                 <div class="tu1">
+                     <img src="img/tu33.png" alt="">
+                 </div>
+             </div>
+          </div>
+          <div class="n-box1">
+              <p class="c2">任务攻略:</p>
+          </div>
+          <div class="n-box2">
+              <ul class="n-b">
+                  <li>
+                      <div class="infor2">
+                          <p class="d-s">1.手机号注册登录游戏奖励0.4元注册登</p>
+                          <p class="d-z">(只有绑定新手机号才可以获得)</p>
+                      </div>
+
+                  </li>
+                  <li>
+                      <div class="infor2">
+                          <p class="d-s">1.手机号注册登录游戏奖励0.4元注册登</p>
+                          <p class="d-z">(只有绑定新手机号才可以获得)</p>
+                      </div>
+
+                  </li>
+                  <li>
+                      <div class="infor2">
+                          <p class="d-s">1.手机号注册登录游戏奖励0.4元注册登</p>
+                          <p class="d-z">(只有绑定新手机号才可以获得)</p>
+                      </div>
+
+                  </li>
+
+              </ul>
+          </div>
+  </div>
+
+</div>
+</body>
+<script src="../js/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: '#app',
+    data: {
+      title: '一起牛',
+      app_img: 'img/appimg.png',
+      app_infor: '闪银--3分钟就有钱',
+      appdown: 'http://baidu.com'
+
+    }
+  })
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>target-div</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div>dddddddddddddddd</div>
+<!-- 1. Define some markup -->
+<div id="bar">hello</div>
+<button class="copybtn btn" data-clipboard-action="copy" data-clipboard-target="#bar">Copy</button>
+
+<!-- 2. Include library -->
+<script src="js/clipboard.min.js"></script>
+
+<!-- 3. Instantiate clipboard -->
+<script>
+    var clipboard = new Clipboard('.copybtn');
+
+    clipboard.on('success', function(e) {
+        console.log(e);
+    });
+
+    clipboard.on('error', function(e) {
+        console.log(e);
+    });
+</script>
+</body>
+</html>

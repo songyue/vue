@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/common.css">
+
+</head>
+<body>
+<header>
+    <h5>试玩奖励1.5元<span class="back"></span></h5>
+</header>
+<div class="section padding">
+    <div class="box tips">
+        <div class="prompt">
+            <div class="proleft">
+                <div class="red pull-left"></div>
+                <div class="pull-left tishi">温馨提示</div>
+            </div>
+
+            <div class="proright"></div>
+
+        </div>
+        <p><span>1.</span><span class="colorred">2分钟内</span>点击“开始任务”按钮</p>
+        <p><span>2.App Store下载必须 </span><span class="colorred">首次</span></p>
+        <p><span>3.在</span> <span class="colorred">10分钟内</span>完成下载，返回玩否打开应用</p>
+        <p> <span>4.需要注册的</span><span class="colorred">一定要注册</span></p>
+        <p><span>5.</span><span class="colorred">iOS10</span>必须允许<span class="colorred">使用网络</span></p>
+    </div>
+    <div class="jiangli">
+        <span class="colorred">首次</span><span>下载</span><span class="colorred">注册</span><span>并试玩</span><span class="colorred">5分钟</span><span>获奖励+1.5</span>
+    </div>
+    <div class="box detail">
+        <div class="paiming">
+            在第<span class="colorred">60</span>位左右
+        </div>
+        <div class="zhushou margin0">
+            <img src="./img/icon2_03.jpg" alt="">
+        </div>
+        <div class="fuzhi">
+            请在<span class="colorred">120秒内</span>开始任务
+        </div>
+        <a class="step stepa"><p>开始任务</p><span class="step1">第一步</span></a>
+        <a class="step stepb"><p>打开应用 </p><span class="step1">第二步</span></a>
+    </div>
+    <div class="jiangli">
+        <span>任务完成后，勿删除</span><span class="colorred">次日</span><span>打开可获得奖励</span><span class="colorred">0.1</span><span>元</span>
+    </div>
+</div>
+<p class="vfouurl">请记住玩否永久网址：h5.vfou.com</p>
+</body>
+<script src="./js/jquery-1.8.3.min.js"></script>
+<script src="./js/common.js"></script>
+<script>
+    $(function () {
+        var f=1;
+        $(".prompt").eq(0).click(function () {
+            $(this).siblings().toggle();
+            if (f==1){
+                $(".proright").eq(0).addClass("down");
+                $(".tishi").eq(0).empty().append("<span>玩否官方提示:</span><span class='colorqian'>iOS10用户必须允许使用网络</span>");
+                f=0;
+            }else {
+                $(".proright").eq(0).removeClass("down")
+                f=1;
+                $(".tishi").eq(0).text("温馨提示");
+            }
+
+        }) ;
+
+        $(".stepa").eq(0).click(function () {
+            $(this).children("p").text("已开始任务") ;   //f复制关键词
+            $(".fuzhi").eq(0).empty().append("<span>请在</span><span class='colorred'>10分钟</span><span>内完成下载</span>") ;
+        }) ;
+        $(".stepb").eq(0).click(function () {
+            $(".fuzhi").eq(0).empty().append("<span>请在</span><span class='colorred'>10分钟</span><span>内打开应用</span>");
+        })
+    })
+
+</script>
+</html>

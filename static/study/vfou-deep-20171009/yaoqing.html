@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/swiper-3.3.1.min.css">
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/common.js"></script>
+
+</head>
+<body>
+<div class="head2">
+    <div class="pull-left ">分享</div>
+    <div class="pull-left active">二维码</div>
+    <div class="pull-left ">邀请码</div>
+
+</div>
+<section>
+
+    <div class="er  "  >
+        <div class="qrcodebox">
+
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" >
+
+                        <div class="qrcode">
+                            <div class="codebg">
+                                <div class="height"></div>
+                                <div class="scan"></div>
+                                <div class="save">
+                                    <span class="pull-left">长按保存相册</span>
+                                    <span class="pull-right">有效期:30天</span>
+                                </div>
+                                <div class="join">扫一扫加入玩否</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="qrcode2">
+                            <div class="codebg2">
+                                <div class="height2"></div>
+                                <div class="scan1"></div>
+
+                                <div class="join">扫一扫加入玩否</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-slide">
+
+                        <div class="qrcode3">
+                            <div class="codebg3">
+                                <div class="height2"></div>
+                                <div class="scan1"></div>
+
+                                <div class="join">扫一扫加入玩否</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 分页器 -->
+                <div class="swiper-pagination">
+                </div>
+
+            </div>
+
+
+
+        </div>
+        <div class="forevery">申请永久二维码</div>
+    </div>
+   <div class="sharebox hidden" >
+       <div class="share-d">
+           <a href="">查看邀请详情</a>
+       </div>
+       <div class="share">
+           <img src="./img/yao_03.png" alt="">
+       </div>
+       <a class="tostore">立即分享，获得奖励</a>
+
+   </div>
+
+    <div class="yaoma hidden" style="display: none" >
+        <div class="yao1">
+             <p class="yaop">您的邀请码</p>
+            <div class="yaoh" id="bar">5432145</div>
+        </div>
+        <p class="yaop1">用户下载后填写您的邀请码，您可获得奖励哦</p>
+
+
+    </div>
+</section>
+<footer >
+    <div class="flex">
+        <a href="index.html" class="tubiao ">
+            <div class="renwu"></div>
+            <div>任务</div>
+        </a>
+        <a href="yaoqing.html" class="tubiao cur">
+            <div class="yaoqing"></div>
+            <div>邀请</div>
+        </a>
+        <a href="information.html" class="tubiao ">
+            <div class="message"></div>
+            <div>消息</div>
+        </a>
+        <a href="mine.html" class="tubiao">
+            <div class="mine"></div>
+            <div>我的</div>
+        </a>
+    </div>
+
+</footer>
+
+<div class="alert hidden">
+    <div class="alertbox">
+        <h4 class="alerth"><span class="off1"></span></h4>
+        <div class="content11">
+            <div class="conth">
+                <div>邀请满100人即可申请永久二维码</div>
+                <div>请联系QQ：2089674197</div>
+            </div>
+        </div>
+        <div class="alertbtn">知道了</div>
+
+
+    </div>
+</div>
+<div class="alert hidden">
+    <div class="alertbox">
+        <h4 class="alerth"><span class="off1"></span></h4>
+        <div class="content11">
+            <div class="conth">
+               复制成功
+            </div>
+        </div>
+        <div class="alertbtn">知道了</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="./js/swiper-3.3.1.min.js"></script>
+
+
+<script>
+    $(function () {
+        //    弹窗
+$(".forevery").click(function () {
+    $(".alert").eq(0).show();
+})
+
+
+
+        var mySwiper = new Swiper('.swiper-container', {
+            loop: true,
+            initialSlide: 0, //initialSlide  设定初始化时slide的索引。
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+
+            autoplay: false,
+            autoplayStopOnLast: false,
+            paginationBulletRender: function(index, className) {
+                return '<span class="' + className + '">' + (index + 1) + '</span>';
+            }
+        });
+
+
+
+        $(".head2 div").eq(0).click(function () {
+
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".sharebox").css("display","block");
+            $(".er").css("display","none");
+            $(".yaoma").css("display","none");
+        }) ;
+        $(".head2 div").eq(1).click(function () {
+
+
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".sharebox").css("display","none");
+            $(".er").css("display","block");
+            $(".yaoma").css("display","none");
+        });
+        $(".head2 div").eq(2).click(function () {
+
+
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".sharebox").css("display","none");
+            $(".er").css("display","none");
+            $(".yaoma").css("display","block");
+        })
+
+
+
+//判断ios的版本号start
+        var ver = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+        ver = parseInt(ver[1], 10);
+
+        if(ver<10)
+        {
+            $("<div class='putdown'>请您长按邀请码进行复制</div>").appendTo($(".yao1"));
+            $("#bar").click(function () {
+                return;
+            })
+        } else {
+            $("#bar").click(function () {
+                var clipboard = new Clipboard('#bar', {
+                    text: function() {
+                        return $("#bar").text();
+                    }
+                });
+                clipboard.on('success', function(e) {
+                   $(".alert").eq(1).show();
+
+                    e.clearSelection();
+
+
+                });
+
+                clipboard.on('error', function(e) {
+
+//                alert('请选择“拷贝”进行复制!')
+                });
+            })
+        }
+        //判断ios的版本号end
+    });
+
+
+</script>
+</html>

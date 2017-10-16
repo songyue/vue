@@ -1,0 +1,59 @@
+
+
+.calendar{display: block;}
+.calendar .calendar-title-box{
+     background: #fff;padding: 0 0.12rem;  margin-top: 0.1rem;
+    width: 100%;  height: 0.44rem;line-height: 0.44rem;text-align: center;
+
+    color: #aaaaaa;font-size: 0.14rem; text-align: left;
+}
+.calendar .prev-month{
+    display: none!important;
+
+}
+.calendar .next-month{
+    display: none!important;
+
+}
+.calendar-table{
+    border-radius: 0.1rem 0.1rem 0 0;
+    background: #fff;
+    width: 100%;
+    border-collapse: collapse;
+    text-align:center;
+}
+.calendar-table tr {
+
+    border-bottom: 0.01rem solid #dee7ec;
+     overflow: hidden;
+}
+
+.currentDay{
+
+
+    background:#ffc3c4 url("../img/no_03.png") no-repeat center 80%;
+    background-size: 35%;
+}
+
+.currentMonth {
+
+    background: url("../img/no_03.png") no-repeat center 80%;
+    background-size: 35%;
+    color: #323232;
+}
+
+.otherMonth{
+
+    color: #ccc;
+}
+.calendar-body-box{margin-top: 0.1rem;padding:0 0.12rem;}
+th{height: 0.4rem;color: #323232;font-size: 0.14rem;font-weight: 100;}
+td{height: 0.55rem;line-height: 0.55rem;overflow: hidden!important;}
+td div{margin-top: -0.2rem;}
+.qian{padding: 0 0.12rem;margin-bottom: 0.4rem;}
+.qian1{background: #fff;border-radius: 0 0 0.1rem 0.1rem;padding: 0.15rem 0;}
+.qiandao1{width:0.95rem;height:0.4rem;line-height: 0.2rem;text-align: center;color:#fff;background: #fb4a4e;border-radius: 0.08rem;margin: 0 auto;font-size: 0.14rem;line-height: 0.4rem;}
+.vfouurl{position: relative;width: 100%;height:0.4rem;line-height: 0.4rem;color:#7a7a7a;text-align: center;bottom: 0;left: 0;}
+.ready{   background:#ffc3c4 url("../img/done_03.png") no-repeat center 80%;
+    background-size: 35%;}
+.readyqian{width:0.95rem;height:0.4rem;line-height: 0.2rem;text-align: center;color:#fff;background: #7a7a7a;border-radius: 0.08rem;margin: 0 auto;font-size: 0.14rem;line-height: 0.4rem;}

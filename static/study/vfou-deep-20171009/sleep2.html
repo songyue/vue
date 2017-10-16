@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no" name="format-detection" />
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/common.css">
+
+
+</head>
+<body>
+<div class="assistant">
+    <div class="video">
+        <img src="./img/sleep1_02.png" alt="">
+    </div>
+    <div class="sleep">
+        <div class="sleepdetail">
+            <div class="assid">
+                <p class="deep">ID:123456789</p>
+                <p>试玩过程请勿关闭<span class="ll">睡眠助手</span></p>
+            </div>
+
+            <div class="assbtn">立即开始任务</div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+<script src="./js/jquery-1.8.3.min.js"></script>
+<script src="./js/common.js"></script>
+
+<script>
+    $(function () {
+        var hei1= $("body").height();
+        var hei2=$(".sleep").height();
+        var hei3=hei1-hei2
+        $(".video").css("height",hei3+"px") ;
+    })
+</script>
+</html>
