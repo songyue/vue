@@ -79,15 +79,10 @@
           </div>
           <div class="n-box2">
              <div class="flex2">
-                  <div class="tu1">
-                      <img src="img/tu11.png" alt="">
+                  <div class="tu1" v-for="img in section.imgs">
+                      <img :src="img.src" alt="">
                   </div>
-                 <div class="tu1">
-                     <img src="img/tu22.png" alt="">
-                 </div>
-                 <div class="tu1">
-                     <img src="img/tu33.png" alt="">
-                 </div>
+
              </div>
           </div>
           <div class="n-box1">
@@ -95,24 +90,10 @@
           </div>
           <div class="n-box2">
               <ul class="n-b">
-                  <li>
-                      <div class="infor2">
-                          <p class="d-s">1.手机号注册登录游戏奖励0.4元注册登</p>
-                          <p class="d-z">(只有绑定新手机号才可以获得)</p>
-                      </div>
-
-                  </li>
-                  <li>
-                      <div class="infor2">
-                          <p class="d-s">1.手机号注册登录游戏奖励0.4元注册登</p>
-                          <p class="d-z">(只有绑定新手机号才可以获得)</p>
-                      </div>
-
-                  </li>
-                  <li>
-                      <div class="infor2">
-                          <p class="d-s">1.手机号注册登录游戏奖励0.4元注册登</p>
-                          <p class="d-z">(只有绑定新手机号才可以获得)</p>
+                  <li v-for="guide in section.guide">
+                    <div class="infor2" >
+                      <p class="d-s">{{guide.desc}}</p>
+                      <p class="d-z">{{guide.desc2}}</p>
                       </div>
 
                   </li>
@@ -149,7 +130,19 @@
           {desc:'4.手机号注册登录游戏奖励0.4元注册登', desc2:'(只有绑定新手机号才可以获得)', status: 0},
           {desc:'5.手机号注册登录游戏奖励0.4元注册登', desc2:'(只有绑定新手机号才可以获得)', status: 0}
           ],
-        description: '后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，'
+        description: '后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，后台填写的简介，超过多少字符折叠显示，',
+        imgs: [
+          {src:'img/tu22.png'},
+          {src:'img/tu11.png'},
+          {src:'img/tu33.png'}
+        ],
+        guide:[
+          {desc:'1.手机号注册登录游戏奖励0.4元注册登', desc2:'(只有绑定新手机号才可以获得)'},
+          {desc:'2.手机号注册登录游戏奖励0.4元注册登', desc2:'(只有绑定新手机号才可以获得)'},
+          {desc:'3.手机号注册登录游戏奖励0.4元注册登', desc2:'(只有绑定新手机号才可以获得)'},
+          {desc:'4.手机号注册登录游戏奖励0.4元注册登', desc2:'(只有绑定新手机号才可以获得)'},
+        ]
+
       },
       button:{
         height: '0.66rem',
@@ -168,6 +161,9 @@
           button.height = '0.66rem';
           button.isDown = '';
         }
+      },
+      btn_submit: function (event) {
+
       }
 
     }
